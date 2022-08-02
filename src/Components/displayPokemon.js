@@ -24,7 +24,7 @@ const DisplayPokemon = () => {
 				type.type.name.charAt(0).toUpperCase() + type.type.name.slice(1)
 			);
 		});
-		return typesArray.toString().replace(",", ", ");
+		return typesArray.toString().replace(/,/gi, ", ");
 	};
 
 	const displayAbilities = () => {
@@ -35,7 +35,7 @@ const DisplayPokemon = () => {
 					ability.ability.name.slice(1)
 			);
 		});
-		return abilitiesArray.toString().replace(",", ", ");
+		return abilitiesArray.toString().replace(/,/gi, ", ");
 	};
 	return (
 		<div className="pokemon-info-container">
