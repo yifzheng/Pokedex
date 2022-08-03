@@ -14,9 +14,9 @@ import DisplayPokemon from '../Components/displayPokemon'
 const PageRoutes = () => {
     return (
         <Routes>
-            <Route exact path="/" element={ <Homepage /> } />
-            <Route exact path="/pokemon" element={ <Pokedex /> } />
-            <Route path="/pokemon/:id" element={ <DisplayPokemon /> } />
+            <Route exact path="/Pokedex/" element={ <Homepage /> } />
+            <Route exact path="/Pokedex/pokemon" element={ <Pokedex /> } />
+            <Route path="/Pokedex/pokemon/:id" element={ <DisplayPokemon /> } />
             <Route path="*" element={ <NotFound /> } />
         </Routes>
     )

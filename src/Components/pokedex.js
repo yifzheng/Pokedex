@@ -28,7 +28,7 @@ const Pokedex = () => {
 				<Button
 					id="back-navigate-btn"
 					variant="outlined"
-					onClick={() => navigate("/")}
+					onClick={() => navigate("/Pokedex/")}
 				>
 					Back
 				</Button>

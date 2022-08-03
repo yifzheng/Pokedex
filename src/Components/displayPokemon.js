@@ -51,21 +51,21 @@ const DisplayPokemon = () => {
 	};
 
 	const handleBackNavigate = () => {
-		return navigate("/pokemon");
+		return navigate("/Pokedex/pokemon");
 	};
 
 	const handlePreviousNavigate = () => {
 		navigate(
 			pokemon.id - 1 > 0
-				? `/pokemon/${pokemon.id - 1}`
-				: `/pokemon/${1}`
+				? `/Pokedex/pokemon/${pokemon.id - 1}`
+				: `/Pokedex/pokemon/${1}`
 		);
 	};
 	const handleNextNavigate = () => {
 		navigate(
 			pokemon.id + 1 <= 151
-				? `/pokemon/${pokemon.id + 1}`
-				: `/pokemon/${151}`
+				? `/Pokedex/pokemon/${pokemon.id + 1}`
+				: `/Pokedex/pokemon/${151}`
 		);
 	};
 
