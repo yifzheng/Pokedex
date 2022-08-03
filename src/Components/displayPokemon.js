@@ -14,6 +14,8 @@ import {
 	Button,
 } from "@mui/material";
 
+import "../CSS/displaypokemon.css";
+
 const DisplayPokemon = () => {
 	const { id } = useParams();
 	const pokemon = useSelector((state) => state.pokemon);
@@ -25,7 +27,7 @@ const DisplayPokemon = () => {
 			dispatch(getSinglePokemon(id));
 		};
 		getPokemon();
-	}, []);
+	}, [id, dispatch]);
 
 	const displayTypes = () => {
 		const typesArray = [];
@@ -58,7 +60,6 @@ const DisplayPokemon = () => {
 				? `/pokedex/pokemon/${pokemon.id - 1}`
 				: `/pokedex/pokemon/${1}`
 		);
-		return window.location.reload();
 	};
 	const handleNextNavigate = () => {
 		navigate(
@@ -66,7 +67,6 @@ const DisplayPokemon = () => {
 				? `/pokedex/pokemon/${pokemon.id + 1}`
 				: `/pokedex/pokemon/${151}`
 		);
-		return window.location.reload();
 	};
 
 	return (
@@ -99,6 +99,13 @@ const DisplayPokemon = () => {
 												key={index}
 												align="center"
 												className="pokemon-info-cell"
+												style={{
+													fontWeight: 500,
+													fontSize: 20,
+													width: 150,
+													fontFamily: "Roboto",
+													padding: 20,
+												}}
 											>
 												{stat.stat.name &&
 													stat.stat.name
@@ -111,7 +118,7 @@ const DisplayPokemon = () => {
 										);
 									})}
 							</TableRow>
-							<TableRow>
+							<TableRow className="pokemon-info-row">
 								{pokemon.stats !== undefined &&
 									pokemon.stats.map((stat, index) => {
 										return (
@@ -119,60 +126,96 @@ const DisplayPokemon = () => {
 												key={index}
 												align="center"
 												className="pokemon-info-cell"
+												style={{
+													fontSize: 18,
+													padding: 20,
+												}}
 											>
 												{stat.base_stat}
 											</TableCell>
 										);
 									})}
 							</TableRow>
-							<TableRow>
+							<TableRow className="pokemon-info-row">
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{
+										fontWeight: 500,
+										fontSize: 20,
+										width: 150,
+										fontFamily: "Roboto",
+										padding: 20,
+									}}
 								>
 									Height (CM)
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{
+										fontWeight: 500,
+										fontSize: 20,
+										width: 150,
+										fontFamily: "Roboto",
+										padding: 20,
+									}}
 								>
 									Weight (KG)
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{
+										fontWeight: 500,
+										fontSize: 20,
+										width: 150,
+										fontFamily: "Roboto",
+										padding: 20,
+									}}
 								>
 									Types
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{
+										fontWeight: 500,
+										fontSize: 20,
+										width: 150,
+										fontFamily: "Roboto",
+										padding: 20,
+									}}
 								>
 									Abilties
 								</TableCell>
 							</TableRow>
-							<TableRow>
+							<TableRow className="pokemon-info-row">
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{ fontSize: 18, padding: 20 }}
 								>
 									{pokemon.height * 10}
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{ fontSize: 18, padding: 20 }}
 								>
 									{pokemon.weight / 10}
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{ fontSize: 18, padding: 20 }}
 								>
 									{pokemon.types && displayTypes()}
 								</TableCell>
 								<TableCell
 									align="center"
 									className="pokemon-info-cell"
+									style={{ fontSize: 18, padding: 20 }}
 								>
 									{pokemon.abilities && displayAbilities()}
 								</TableCell>
@@ -183,11 +226,24 @@ const DisplayPokemon = () => {
 			) : (
 				<h1 id="loading">Loading</h1>
 			)}
-			<div id="next-previous-buttons">
+			<div
+				id="next-previous-buttons"
+				style={{ marginTop: "5%", padding: 20 }}
+			>
 				<Button
 					id="prev-navigate-btn"
 					onClick={handlePreviousNavigate}
 					variant="outlined"
+					style={{
+						marginLeft: "3%",
+						width: 125,
+						height: 45,
+						fontFamily: "Roboto",
+						border: "3px solid",
+						borderColor: "rgb(61, 152, 87)",
+						fontWeight: 900,
+						backgroundColor: "aliceblue",
+					}}
 				>
 					Previous
 				</Button>
@@ -195,6 +251,17 @@ const DisplayPokemon = () => {
 					id="next-navigate-btn"
 					onClick={handleNextNavigate}
 					variant="outlined"
+					style={{
+						float: "right",
+						marginRight: "3%",
+						width: 125,
+						height: 45,
+						fontFamily: "Roboto",
+						border: "3px solid",
+						borderColor: "rgb(61, 152, 87)",
+						fontWeight: 900,
+						backgroundColor: "aliceblue",
+					}}
 				>
 					Next
 				</Button>

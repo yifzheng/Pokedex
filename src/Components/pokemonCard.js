@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../CSS/pokemoncard.css";
 
 const PokemonCard = ({ name, pokemonUrl }) => {
 	const id = pokemonUrl
@@ -12,9 +13,11 @@ const PokemonCard = ({ name, pokemonUrl }) => {
 			style={{ textDecoration: "none", color: "black" }}
 		>
 			<div className="pokemon-card">
-				<p id="pokemon-id">#{id}</p>
+				<p className="pokemon-id">#{id}</p>
 
-				<p>{name}</p>
+				<p className="pokemon-name">
+					{name.charAt(0).toUpperCase() + name.slice(1)}
+				</p>
 			</div>
 		</Link>
 	);

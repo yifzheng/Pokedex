@@ -1,0 +1,21 @@
+@media screen and (min-width: 350px) {
+    .pokemon-card {
+        width: 170px;
+        display: inline-block;
+        border: 3px solid rgb(252, 180, 180);
+        border-radius: 10px;
+        margin-left: 3%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .pokemon-id {
+        margin-bottom: 5px;
+    }
+    .pokemon-name {
+        margin-top: 0;
+    } 
+}

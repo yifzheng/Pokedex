@@ -7,6 +7,8 @@ import { Button } from "@mui/material";
 
 // pokemon card component
 import PokemonCard from "./pokemonCard";
+//css
+import "../CSS/pokedex.css";
 
 const Pokedex = () => {
 	const pokemons = useSelector((state) => state.pokemons);
@@ -18,22 +20,19 @@ const Pokedex = () => {
 			dispatch(getAllGen1Pokemon());
 		};
 		getPokemon();
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div className="Pokedex">
-			<header>
-				<div id="back-button-container">
-					<Button
-						id="back-navigate-btn"
-						variant="outlined"
-						onClick={() => navigate("/")}
-					>
-						Back
-					</Button>
-				</div>
-				<h1>Generation 1 Pokedex</h1>
-			</header>
+			<div id="back-button-container">
+				<Button
+					id="back-navigate-btn"
+					variant="outlined"
+					onClick={() => navigate("/")}
+				>
+					Back
+				</Button>
+			</div>
 			{pokemons !== undefined &&
 				pokemons.map((pokemon, index) => {
 					return (
