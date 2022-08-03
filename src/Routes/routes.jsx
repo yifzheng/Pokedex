@@ -15,8 +15,8 @@ const PageRoutes = () => {
     return (
         <Routes>
             <Route exact path="/" element={ <Homepage /> } />
-            <Route exact path="/pokedex" element={ <Pokedex /> } />
-            <Route path="/pokedex/pokemon/:id" element={ <DisplayPokemon /> } />
+            <Route exact path="/pokemon" element={ <Pokedex /> } />
+            <Route path="/pokemon/:id" element={ <DisplayPokemon /> } />
             <Route path="*" element={ <NotFound /> } />
         </Routes>
     )

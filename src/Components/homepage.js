@@ -19,7 +19,7 @@ const Homepage = () => {
 			</section>
 
 			<section id="homepage-continue">
-				<Link to="/pokedex" style={{ textDecoration: "none" }}>
+				<Link to="/pokemon" style={{ textDecoration: "none" }}>
 					<Button className="homepage-to-pokedex" variant="outlined">
 						Continue to Pokedex
 					</Button>

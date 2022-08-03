@@ -9,7 +9,7 @@ const PokemonCard = ({ name, pokemonUrl }) => {
 
 	return (
 		<Link
-			to={`/pokedex/pokemon/${id}`}
+			to={`/pokemon/${id}`}
 			style={{ textDecoration: "none", color: "black" }}
 		>
 			<div className="pokemon-card">
