@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
 
 const Homepage = () => {
 	return (
@@ -8,10 +9,10 @@ const Homepage = () => {
 				<h1>Welcome to the Generation 1 Pokedex</h1>
 			</header>
 			<section className="hoempage-continue">
-				<Link to="/pokedex">
-					<button className="homepage-to-pokedex">
+				<Link to="/pokedex" style={{ textDecoration: 'none' }}>
+					<Button className="homepage-to-pokedex" variant="outlined">
 						Continue to Pokedex
-					</button>
+					</Button>
 				</Link>
 			</section>
 		</div>
