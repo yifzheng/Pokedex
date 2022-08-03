@@ -11,7 +11,7 @@ const Homepage = () => {
 			</header>
 			<section id="homepage-image">
 				<img
-					src="/pokedex.png"
+					src="./pokedex.png"
 					alt="pokeball"
 					width={400}
 					height={225}
